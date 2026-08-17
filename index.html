@@ -1,0 +1,874 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+
+  <!-- Primary SEO -->
+  <title>Pet Calorie Calculator &amp; Nutrition Guide for Dogs &amp; Cats | PawNutrition</title>
+  <meta name="description" content="Free pet calorie calculator using veterinary RER/DER formulas. Get daily kcal needs, growth milestones, feeding plans, and vet-trusted food recommendations for dogs, puppies, cats, and kittens." />
+  <meta name="keywords" content="pet calorie calculator, dog calorie calculator, cat calorie calculator, RER DER formula, puppy feeding guide, kitten nutrition, pet weight loss, dog food recommendations, cat food guide, pet growth planner" />
+  <meta name="author" content="PawNutrition" />
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+  <link rel="canonical" href="https://pawnutrition.com/" />
+
+  <!-- Open Graph (Facebook, LinkedIn) -->
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="PawNutrition" />
+  <meta property="og:title" content="Pet Calorie Calculator &amp; Nutrition Guide | PawNutrition" />
+  <meta property="og:description" content="Calculate your dog or cat's daily calorie needs, build a growth plan, and discover vet-trusted food picks — free and science-based." />
+  <meta property="og:url" content="https://pawnutrition.com/" />
+  <meta property="og:locale" content="en_US" />
+  <meta property="og:image" content="https://pawnutrition.com/og-image.svg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="PawNutrition — Pet Health, Diet and Growth Planner" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Pet Calorie Calculator &amp; Nutrition Guide | PawNutrition" />
+  <meta name="twitter:description" content="Free RER/DER calorie calculator, growth milestones, and curated pet food recommendations for dogs and cats." />
+  <meta name="twitter:image" content="https://pawnutrition.com/og-image.svg" />
+  <meta name="twitter:image:alt" content="PawNutrition pet nutrition calculator" />
+
+  <!-- Mobile & PWA -->
+  <meta name="theme-color" content="#F0943E" />
+  <meta name="mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+  <meta name="apple-mobile-web-app-title" content="PawNutrition" />
+  <meta name="format-detection" content="telephone=no" />
+  <link rel="manifest" href="site.webmanifest" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect fill='%23F0943E' rx='22' width='100' height='100'/><text x='50' y='65' font-size='50' text-anchor='middle'>🐾</text></svg>" />
+
+  <!-- Performance: self-hosted CSS, system fonts — zero external requests -->
+  <link rel="stylesheet" href="styles.css" />
+
+  <!-- Structured Data (JSON-LD) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebSite",
+        "@id": "https://pawnutrition.com/#website",
+        "url": "https://pawnutrition.com/",
+        "name": "PawNutrition",
+        "description": "Science-based pet nutrition hub for dogs and cats.",
+        "inLanguage": "en-US",
+        "publisher": { "@id": "https://pawnutrition.com/#organization" }
+      },
+      {
+        "@type": "Organization",
+        "@id": "https://pawnutrition.com/#organization",
+        "name": "PawNutrition",
+        "url": "https://pawnutrition.com/",
+        "logo": { "@type": "ImageObject", "url": "https://pawnutrition.com/og-image.svg" }
+      },
+      {
+        "@type": "WebApplication",
+        "@id": "https://pawnutrition.com/#app",
+        "name": "Pet Calorie Calculator",
+        "url": "https://pawnutrition.com/#calculator",
+        "applicationCategory": "HealthApplication",
+        "operatingSystem": "Any",
+        "browserRequirements": "Requires JavaScript",
+        "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+        "description": "Calculate daily energy requirements (RER/DER) for dogs, cats, puppies, and kittens using veterinary-standard formulas.",
+        "featureList": [
+          "RER and DER calorie calculator",
+          "Lbs and Kg weight units",
+          "Life stage multipliers",
+          "Personalized feeding plans",
+          "Growth milestone tracker",
+          "Curated pet food recommendations"
+        ],
+        "author": { "@id": "https://pawnutrition.com/#organization" }
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "How do I calculate my dog's daily calorie needs?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "First calculate RER (Resting Energy Requirement) = 70 × (body weight in kg)^0.75. Then multiply by a life stage factor: neutered adult ×1.6, intact adult ×1.8, weight loss ×1.0, puppy/kitten under 4 months ×3.0. The result is DER — Daily Energy Requirement in kcal."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How many calories should a cat eat per day?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "An average 10 lb (4.5 kg) neutered adult cat needs roughly 240–280 kcal/day. Use the PawNutrition calculator with your cat's exact weight and life stage for a personalized result based on the RER/DER formula."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What is the difference between RER and DER?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "RER is Resting Energy Requirement — calories needed at rest. DER is Daily Energy Requirement — RER multiplied by a factor based on age, neuter status, activity, and health goals. DER is what you feed daily."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How much food should I feed my puppy?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Puppies under 4 months need DER = RER × 3.0. Divide daily kcal by your food's kcal per cup to get cups per day, split into 3–4 meals. Always use a puppy-specific formula for proper calcium and DHA levels."
+            }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+</head>
+<body class="bg-cream-50 text-gray-800 min-h-screen flex flex-col">
+
+<!-- ═══════════════ HEADER ═══════════════ -->
+<header class="bg-white/90 backdrop-blur-md border-b border-cream-200 sticky top-0 z-50">
+  <div class="max-w-5xl mx-auto px-4 py-3 flex items-center justify-between">
+    <button onclick="navigate('home')" class="flex items-center gap-2.5 group">
+      <div class="w-9 h-9 rounded-xl bg-gradient-to-br from-apricot-400 to-apricot-600 flex items-center justify-center text-white text-lg shadow">🐾</div>
+      <div class="text-left">
+        <p class="font-bold text-gray-900 leading-tight group-hover:text-apricot-600 transition">PawNutrition</p>
+        <p class="text-[10px] text-gray-400 leading-tight hidden sm:block">Health · Diet · Growth</p>
+      </div>
+    </button>
+
+    <!-- Desktop Nav -->
+    <nav class="hidden md:flex items-center gap-1 text-sm font-medium" aria-label="Main navigation">
+      <button data-page="home"      class="nav-link px-3 py-1.5 rounded-lg text-gray-600 hover:text-apricot-600 transition">Home</button>
+      <button data-page="calculator" class="nav-link px-3 py-1.5 rounded-lg text-gray-600 hover:text-apricot-600 transition">Calculator</button>
+      <button data-page="growth"   class="nav-link px-3 py-1.5 rounded-lg text-gray-600 hover:text-apricot-600 transition">Growth Plan</button>
+      <button data-page="foods"    class="nav-link px-3 py-1.5 rounded-lg text-gray-600 hover:text-apricot-600 transition">Food Guide</button>
+      <button data-page="learn"    class="nav-link px-3 py-1.5 rounded-lg text-gray-600 hover:text-apricot-600 transition">Learn</button>
+    </nav>
+
+    <button id="menuBtn" class="md:hidden p-2 rounded-lg hover:bg-cream-100 transition" aria-label="Menu">
+      <svg class="w-6 h-6 text-gray-700" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+    </button>
+  </div>
+</header>
+
+<!-- Mobile Menu -->
+<div id="mobileMenu" class="fixed inset-y-0 right-0 w-64 bg-white shadow-2xl z-50 p-6 flex flex-col gap-2 md:hidden">
+  <button id="menuClose" class="self-end p-1 text-gray-400 hover:text-gray-700 mb-4">✕</button>
+  <button data-page="home"      class="mobile-nav px-4 py-3 rounded-xl text-left font-medium text-gray-700 hover:bg-cream-100">🏠 Home</button>
+  <button data-page="calculator" class="mobile-nav px-4 py-3 rounded-xl text-left font-medium text-gray-700 hover:bg-cream-100">🧮 Calculator</button>
+  <button data-page="growth"   class="mobile-nav px-4 py-3 rounded-xl text-left font-medium text-gray-700 hover:bg-cream-100">📈 Growth Plan</button>
+  <button data-page="foods"    class="mobile-nav px-4 py-3 rounded-xl text-left font-medium text-gray-700 hover:bg-cream-100">🍽️ Food Guide</button>
+  <button data-page="learn"    class="mobile-nav px-4 py-3 rounded-xl text-left font-medium text-gray-700 hover:bg-cream-100">📚 Learn</button>
+</div>
+<div id="menuOverlay" class="fixed inset-0 bg-black/30 z-40 hidden md:hidden"></div>
+
+<main class="flex-1 max-w-5xl mx-auto w-full px-4 py-8">
+
+<!-- ═══════════════ PAGE: HOME ═══════════════ -->
+<div id="page-home" class="page active space-y-10" role="region" aria-label="Home">
+
+  <!-- Hero -->
+  <section class="text-center space-y-5 pt-4">
+    <div class="inline-flex items-center gap-2 text-xs font-semibold text-apricot-600 bg-apricot-400/10 px-4 py-1.5 rounded-full">
+      ✨ Veterinary-Standard Nutrition Science
+    </div>
+    <h1 class="text-4xl sm:text-5xl font-extrabold text-gray-900 tracking-tight leading-tight">
+      Raise a Healthier,<br class="sm:hidden" /> Happier Pet
+    </h1>
+    <p class="text-gray-500 text-lg max-w-2xl mx-auto leading-relaxed">
+      Your all-in-one hub for daily calorie needs, age-based growth milestones,
+      curated food recommendations, and personalized feeding plans — built for
+      dog &amp; cat parents who want the best.
+    </p>
+    <div class="flex flex-col sm:flex-row gap-3 justify-center pt-2">
+      <button onclick="navigate('calculator')" class="px-8 py-3.5 rounded-2xl bg-gradient-to-r from-apricot-500 to-apricot-600 text-white font-bold shadow-lg shadow-apricot-400/30 hover:from-apricot-600 transition">
+        Calculate Calories →
+      </button>
+      <button onclick="navigate('growth')" class="px-8 py-3.5 rounded-2xl border-2 border-apricot-400 text-apricot-600 font-bold hover:bg-apricot-400/5 transition">
+        View Growth Plan
+      </button>
+    </div>
+  </section>
+
+  <!-- Feature Cards -->
+  <section class="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
+    <div class="plan-card bg-white rounded-2xl border border-cream-200 p-5 space-y-2 cursor-pointer" onclick="navigate('calculator')">
+      <div class="text-2xl">🧮</div>
+      <h3 class="font-bold text-gray-900">Calorie Calculator</h3>
+      <p class="text-sm text-gray-500">RER &amp; DER formulas used by vets worldwide. Lbs/Kg toggle included.</p>
+    </div>
+    <div class="plan-card bg-white rounded-2xl border border-cream-200 p-5 space-y-2 cursor-pointer" onclick="navigate('growth')">
+      <div class="text-2xl">📈</div>
+      <h3 class="font-bold text-gray-900">Growth Planner</h3>
+      <p class="text-sm text-gray-500">Age-based milestones, vaccination reminders, and weight targets.</p>
+    </div>
+    <div class="plan-card bg-white rounded-2xl border border-cream-200 p-5 space-y-2 cursor-pointer" onclick="navigate('foods')">
+      <div class="text-2xl">🍽️</div>
+      <h3 class="font-bold text-gray-900">Food Guide</h3>
+      <p class="text-sm text-gray-500">20+ vet-trusted brands filtered by life stage and health goal.</p>
+    </div>
+    <div class="plan-card bg-white rounded-2xl border border-cream-200 p-5 space-y-2 cursor-pointer" onclick="navigate('learn')">
+      <div class="text-2xl">📚</div>
+      <h3 class="font-bold text-gray-900">Nutrition Library</h3>
+      <p class="text-sm text-gray-500">Body condition scoring, toxic foods, and expert feeding tips.</p>
+    </div>
+  </section>
+
+  <!-- How It Works -->
+  <section class="bg-white rounded-3xl border border-cream-200 p-6 sm:p-8 space-y-6">
+    <h2 class="text-2xl font-bold text-gray-900 text-center">How PawNutrition Works</h2>
+    <div class="grid sm:grid-cols-3 gap-6">
+      <div class="text-center space-y-2">
+        <div class="w-10 h-10 rounded-full bg-apricot-400/15 text-apricot-600 font-bold flex items-center justify-center mx-auto">1</div>
+        <h4 class="font-semibold">Enter Pet Details</h4>
+        <p class="text-sm text-gray-500">Type, weight, age, breed size, and health goal.</p>
+      </div>
+      <div class="text-center space-y-2">
+        <div class="w-10 h-10 rounded-full bg-apricot-400/15 text-apricot-600 font-bold flex items-center justify-center mx-auto">2</div>
+        <h4 class="font-semibold">Get Your Plan</h4>
+        <p class="text-sm text-gray-500">Daily kcal, meal schedule, cups/day, and treat budget.</p>
+      </div>
+      <div class="text-center space-y-2">
+        <div class="w-10 h-10 rounded-full bg-apricot-400/15 text-apricot-600 font-bold flex items-center justify-center mx-auto">3</div>
+        <h4 class="font-semibold">Shop &amp; Track</h4>
+        <p class="text-sm text-gray-500">Curated food picks with Amazon links. Re-calculate as they grow.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Trust Bar -->
+  <section class="flex flex-wrap justify-center gap-6 text-center text-sm text-gray-400 pb-4">
+    <span>🔬 AAHA-Aligned Formulas</span>
+    <span>🐕 Dogs &amp; Cats</span>
+    <span>📱 Mobile Friendly</span>
+    <span>🆓 100% Free</span>
+  </section>
+</div>
+
+<!-- ═══════════════ PAGE: CALCULATOR ═══════════════ -->
+<div id="page-calculator" class="page space-y-8">
+  <div class="text-center space-y-2">
+    <h2 class="text-3xl font-extrabold text-gray-900">Calorie Calculator</h2>
+    <p class="text-gray-500">RER = 70 × BW<sup>0.75</sup> (kg) &nbsp;·&nbsp; DER = RER × Life Stage Multiplier</p>
+  </div>
+
+  <div class="bg-white rounded-3xl shadow-lg shadow-apricot-400/5 border border-cream-200 overflow-hidden">
+    <form id="calcForm" class="p-6 space-y-6" novalidate>
+
+      <!-- Pet Type -->
+      <div>
+        <label class="block text-sm font-semibold text-gray-700 mb-3">Pet Type</label>
+        <div class="grid grid-cols-2 sm:grid-cols-4 gap-3" id="petTypeGrid">
+          <button type="button" data-pet="dog"    class="pet-type-btn selected flex flex-col items-center gap-2 p-4 rounded-2xl border-2 border-cream-200 hover:border-apricot-400 transition"><span class="text-3xl">🐕</span><span class="text-sm font-semibold">Dog</span></button>
+          <button type="button" data-pet="cat"    class="pet-type-btn flex flex-col items-center gap-2 p-4 rounded-2xl border-2 border-cream-200 hover:border-apricot-400 transition"><span class="text-3xl">🐈</span><span class="text-sm font-semibold">Cat</span></button>
+          <button type="button" data-pet="puppy"  class="pet-type-btn flex flex-col items-center gap-2 p-4 rounded-2xl border-2 border-cream-200 hover:border-apricot-400 transition"><span class="text-3xl">🐶</span><span class="text-sm font-semibold">Puppy</span></button>
+          <button type="button" data-pet="kitten" class="pet-type-btn flex flex-col items-center gap-2 p-4 rounded-2xl border-2 border-cream-200 hover:border-apricot-400 transition"><span class="text-3xl">🐱</span><span class="text-sm font-semibold">Kitten</span></button>
+        </div>
+      </div>
+
+      <div class="grid sm:grid-cols-2 gap-4">
+        <div>
+          <label for="petName" class="block text-sm font-semibold text-gray-700 mb-2">Pet Name <span class="font-normal text-gray-400">(optional)</span></label>
+          <input type="text" id="petName" placeholder="Buddy, Luna…" class="w-full px-4 py-3 rounded-xl border border-cream-200 bg-cream-50 focus:outline-none focus:ring-2 focus:ring-apricot-400/50 focus:border-apricot-400 text-base" />
+        </div>
+        <div>
+          <label for="petAge" class="block text-sm font-semibold text-gray-700 mb-2">Age</label>
+          <div class="flex gap-2">
+            <input type="number" id="petAge" min="0" max="30" placeholder="Age" class="flex-1 px-4 py-3 rounded-xl border border-cream-200 bg-cream-50 focus:outline-none focus:ring-2 focus:ring-apricot-400/50 focus:border-apricot-400 text-base" />
+            <select id="ageUnit" class="px-3 py-3 rounded-xl border border-cream-200 bg-cream-50 focus:outline-none focus:ring-2 focus:ring-apricot-400/50 text-base">
+              <option value="years">Years</option>
+              <option value="months">Months</option>
+            </select>
+          </div>
+        </div>
+      </div>
+
+      <!-- Weight -->
+      <div>
+        <div class="flex items-center justify-between mb-2">
+          <label for="weight" class="text-sm font-semibold text-gray-700">Body Weight</label>
+          <div class="flex rounded-xl overflow-hidden border border-cream-200 text-sm font-semibold">
+            <button type="button" id="btnLbs" class="toggle-btn active px-4 py-1.5 bg-cream-100 text-gray-600 transition">Lbs</button>
+            <button type="button" id="btnKg"  class="toggle-btn px-4 py-1.5 bg-cream-100 text-gray-600 transition">Kg</button>
+          </div>
+        </div>
+        <div class="relative">
+          <input type="number" id="weight" min="0.1" step="0.1" placeholder="Enter weight" class="w-full px-4 py-3 pr-16 rounded-xl border border-cream-200 bg-cream-50 focus:outline-none focus:ring-2 focus:ring-apricot-400/50 focus:border-apricot-400 text-base" required />
+          <span id="unitLabel" class="absolute right-4 top-1/2 -translate-y-1/2 text-gray-400 font-medium text-sm">lbs</span>
+        </div>
+        <p id="weightError" class="hidden text-red-500 text-xs mt-1.5">Please enter a valid weight greater than 0.</p>
+      </div>
+
+      <div class="grid sm:grid-cols-2 gap-4">
+        <!-- Breed Size -->
+        <div>
+          <label for="breedSize" class="block text-sm font-semibold text-gray-700 mb-2">Breed Size</label>
+          <select id="breedSize" class="w-full px-4 py-3 rounded-xl border border-cream-200 bg-cream-50 focus:outline-none focus:ring-2 focus:ring-apricot-400/50 text-base">
+            <option value="small">Small (&lt; 20 lbs / 9 kg)</option>
+            <option value="medium">Medium (20–50 lbs / 9–23 kg)</option>
+            <option value="large">Large (50–90 lbs / 23–41 kg)</option>
+            <option value="giant">Giant (&gt; 90 lbs / 41 kg)</option>
+          </select>
+        </div>
+        <!-- Life Stage -->
+        <div>
+          <label for="lifeStage" class="block text-sm font-semibold text-gray-700 mb-2">Life Stage / Goal</label>
+          <select id="lifeStage" class="w-full px-4 py-3 rounded-xl border border-cream-200 bg-cream-50 focus:outline-none focus:ring-2 focus:ring-apricot-400/50 text-base">
+            <option value="1.6">Adult — Neutered / Spayed (×1.6)</option>
+            <option value="1.8">Adult — Intact / Not Neutered (×1.8)</option>
+            <option value="1.0">Weight Loss Program (×1.0)</option>
+            <option value="3.0">Puppy / Kitten under 4 months (×3.0)</option>
+          </select>
+        </div>
+      </div>
+
+      <!-- Health Plan -->
+      <div>
+        <label for="healthPlan" class="block text-sm font-semibold text-gray-700 mb-2">Health Plan</label>
+        <select id="healthPlan" class="w-full px-4 py-3 rounded-xl border border-cream-200 bg-cream-50 focus:outline-none focus:ring-2 focus:ring-apricot-400/50 text-base">
+          <option value="maintenance">Maintenance — Keep current weight</option>
+          <option value="weightloss">Weight Loss — Gradual calorie reduction</option>
+          <option value="active">Active / Working — High activity level</option>
+          <option value="senior">Senior — Reduced metabolism support</option>
+          <option value="growth">Growth — Puppy / Kitten development</option>
+        </select>
+      </div>
+
+      <button type="submit" class="w-full py-4 rounded-2xl bg-gradient-to-r from-apricot-500 to-apricot-600 text-white font-bold text-lg shadow-lg shadow-apricot-400/30 hover:from-apricot-600 active:scale-[.98] transition-all">
+        Calculate Daily Calories 🐾
+      </button>
+    </form>
+  </div>
+
+  <!-- Results -->
+  <div id="resultsSection" class="hidden space-y-6">
+    <div class="fade-up bg-white rounded-3xl shadow-lg border border-cream-200 overflow-hidden">
+      <div class="bg-gradient-to-r from-sage-500 to-sage-600 px-6 py-5 text-white">
+        <p class="text-sm opacity-90" id="resultGreeting">Results</p>
+        <p class="text-4xl sm:text-5xl font-extrabold mt-1" id="derResult">— kcal/day</p>
+        <p class="text-sm opacity-80 mt-1">Daily Energy Requirement (DER)</p>
+      </div>
+      <div class="p-6 grid sm:grid-cols-3 gap-4">
+        <div class="bg-cream-50 rounded-2xl p-4 text-center"><p class="text-xs font-semibold text-gray-400 uppercase">RER</p><p class="text-2xl font-bold mt-1" id="rerResult">—</p><p class="text-xs text-gray-400">Resting Energy</p></div>
+        <div class="bg-cream-50 rounded-2xl p-4 text-center"><p class="text-xs font-semibold text-gray-400 uppercase">Multiplier</p><p class="text-2xl font-bold text-apricot-600 mt-1" id="multiplierResult">—</p><p class="text-xs text-gray-400" id="stageLabel">—</p></div>
+        <div class="bg-cream-50 rounded-2xl p-4 text-center"><p class="text-xs font-semibold text-gray-400 uppercase">Weight</p><p class="text-2xl font-bold mt-1" id="weightUsed">—</p><p class="text-xs text-gray-400">used in formula (kg)</p></div>
+      </div>
+    </div>
+
+    <!-- Personalized Health Plan -->
+    <div id="healthPlanCard" class="fade-up bg-white rounded-3xl border border-cream-200 p-6 space-y-5">
+      <h3 class="text-xl font-bold text-gray-900">📋 Your Personalized Health Plan</h3>
+      <div id="planContent" class="space-y-4"></div>
+    </div>
+
+    <!-- Weekly Schedule -->
+    <div class="fade-up bg-white rounded-3xl border border-cream-200 p-6 space-y-4">
+      <h3 class="text-xl font-bold text-gray-900">🗓️ Weekly Feeding Schedule</h3>
+      <div id="weeklySchedule" class="grid sm:grid-cols-7 gap-2 text-center text-xs"></div>
+    </div>
+
+    <!-- Recommended Foods (calc results) -->
+    <div class="fade-up space-y-4">
+      <h3 class="text-xl font-bold text-gray-900">🍽️ Recommended for Your Pet</h3>
+      <div id="resultFoodGrid" class="grid sm:grid-cols-2 gap-4"></div>
+    </div>
+
+    <!-- Amazon CTA -->
+    <div class="fade-up text-center space-y-3 pb-4">
+      <a id="amazonBtn" href="#" target="_blank" rel="noopener noreferrer"
+        class="inline-flex items-center justify-center gap-3 w-full sm:w-auto px-8 py-4 rounded-2xl bg-[#FF9900] hover:bg-[#E68A00] text-white font-bold text-lg shadow-xl shadow-[#FF9900]/30 active:scale-[.98] transition-all">
+        🛒 Shop Low-Calorie Pet Food on Amazon
+      </a>
+      <p class="text-xs text-gray-400">As an Amazon Associate we may earn from qualifying purchases.</p>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════ PAGE: GROWTH PLAN ═══════════════ -->
+<div id="page-growth" class="page space-y-8">
+  <div class="text-center space-y-2">
+    <h2 class="text-3xl font-extrabold text-gray-900">Growth &amp; Development Planner</h2>
+    <p class="text-gray-500">Age-based milestones, weight targets, and care checklists</p>
+  </div>
+
+  <!-- Growth Controls -->
+  <div class="bg-white rounded-3xl border border-cream-200 p-6 space-y-4">
+    <div class="grid sm:grid-cols-3 gap-4">
+      <div>
+        <label class="block text-sm font-semibold text-gray-700 mb-2">Pet Type</label>
+        <select id="growthPetType" class="w-full px-4 py-3 rounded-xl border border-cream-200 bg-cream-50 focus:outline-none focus:ring-2 focus:ring-apricot-400/50 text-base">
+          <option value="dog">Dog</option>
+          <option value="cat">Cat</option>
+          <option value="puppy">Puppy</option>
+          <option value="kitten">Kitten</option>
+        </select>
+      </div>
+      <div>
+        <label class="block text-sm font-semibold text-gray-700 mb-2">Current Age (months)</label>
+        <input type="number" id="growthAge" min="0" max="240" value="6" class="w-full px-4 py-3 rounded-xl border border-cream-200 bg-cream-50 focus:outline-none focus:ring-2 focus:ring-apricot-400/50 text-base" />
+      </div>
+      <div>
+        <label class="block text-sm font-semibold text-gray-700 mb-2">Breed Size</label>
+        <select id="growthBreedSize" class="w-full px-4 py-3 rounded-xl border border-cream-200 bg-cream-50 focus:outline-none focus:ring-2 focus:ring-apricot-400/50 text-base">
+          <option value="small">Small</option>
+          <option value="medium" selected>Medium</option>
+          <option value="large">Large</option>
+          <option value="giant">Giant</option>
+        </select>
+      </div>
+    </div>
+    <button id="growthUpdateBtn" class="w-full sm:w-auto px-6 py-3 rounded-xl bg-apricot-500 text-white font-semibold hover:bg-apricot-600 transition">Update Growth Plan</button>
+  </div>
+
+  <!-- Current Stage Banner -->
+  <div id="growthStageBanner" class="bg-gradient-to-r from-apricot-400/15 to-cream-100 rounded-2xl border border-cream-200 p-5"></div>
+
+  <!-- Timeline -->
+  <div id="growthTimeline" class="space-y-0"></div>
+
+  <!-- Weight Target Chart (simple visual) -->
+  <div class="bg-white rounded-3xl border border-cream-200 p-6 space-y-4">
+    <h3 class="text-lg font-bold text-gray-900">⚖️ Expected Weight Range</h3>
+    <div id="weightChart" class="space-y-3"></div>
+    <p class="text-xs text-gray-400">Ranges are approximate. Individual variation by breed and genetics is normal. Consult your vet for breed-specific targets.</p>
+  </div>
+</div>
+
+<!-- ═══════════════ PAGE: FOOD GUIDE ═══════════════ -->
+<div id="page-foods" class="page space-y-8">
+  <div class="text-center space-y-2">
+    <h2 class="text-3xl font-extrabold text-gray-900">Curated Food Guide</h2>
+    <p class="text-gray-500">Vet-trusted brands filtered by pet type, life stage, and health goal</p>
+  </div>
+
+  <!-- Filters -->
+  <div class="flex flex-wrap gap-2 justify-center" id="foodFilters">
+    <button data-filter="all"         class="filter-chip active px-4 py-2 rounded-full border border-cream-200 text-sm font-medium transition">All</button>
+    <button data-filter="dog"        class="filter-chip px-4 py-2 rounded-full border border-cream-200 text-sm font-medium transition">🐕 Dogs</button>
+    <button data-filter="cat"        class="filter-chip px-4 py-2 rounded-full border border-cream-200 text-sm font-medium transition">🐈 Cats</button>
+    <button data-filter="weightloss" class="filter-chip px-4 py-2 rounded-full border border-cream-200 text-sm font-medium transition">Weight Loss</button>
+    <button data-filter="growth"     class="filter-chip px-4 py-2 rounded-full border border-cream-200 text-sm font-medium transition">Growth</button>
+    <button data-filter="senior"     class="filter-chip px-4 py-2 rounded-full border border-cream-200 text-sm font-medium transition">Senior</button>
+  </div>
+
+  <div id="foodDirectory" class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4"></div>
+</div>
+
+<!-- ═══════════════ PAGE: LEARN ═══════════════ -->
+<div id="page-learn" class="page space-y-8">
+  <div class="text-center space-y-2">
+    <h2 class="text-3xl font-extrabold text-gray-900">Nutrition Library</h2>
+    <p class="text-gray-500">Evidence-based guides every pet parent should know</p>
+  </div>
+
+  <!-- BCS Guide -->
+  <section class="bg-white rounded-3xl border border-cream-200 p-6 sm:p-8 space-y-5">
+    <h3 class="text-xl font-bold text-gray-900">🐾 Body Condition Score (BCS)</h3>
+    <p class="text-sm text-gray-500">Score your pet from 1 (emaciated) to 9 (obese). Ideal is 4–5.</p>
+    <div class="grid sm:grid-cols-3 gap-3" id="bcsGuide"></div>
+  </section>
+
+  <!-- Toxic Foods -->
+  <section class="bg-white rounded-3xl border border-cream-200 p-6 sm:p-8 space-y-5">
+    <h3 class="text-xl font-bold text-gray-900">☠️ Foods Toxic to Pets</h3>
+    <p class="text-sm text-gray-500">Never feed these to dogs or cats. When in doubt, call your vet or the ASPCA Poison Control: (888) 426-4435.</p>
+    <div id="toxicFoods" class="grid sm:grid-cols-2 gap-3"></div>
+  </section>
+
+  <!-- Feeding Tips -->
+  <section class="bg-white rounded-3xl border border-cream-200 p-6 sm:p-8 space-y-5">
+    <h3 class="text-xl font-bold text-gray-900">💡 Expert Feeding Tips</h3>
+    <div id="feedingTips" class="space-y-4"></div>
+  </section>
+
+  <!-- Formula Reference -->
+  <section class="bg-cream-100 rounded-3xl border border-cream-200 p-6 sm:p-8 space-y-3">
+    <h3 class="text-lg font-bold text-gray-900">📐 Formula Reference</h3>
+    <div class="font-mono text-sm bg-white rounded-xl p-4 space-y-1 text-gray-700">
+      <p><strong>RER</strong> = 70 × (Body Weight in kg)<sup>0.75</sup></p>
+      <p><strong>DER</strong> = RER × Life Stage Multiplier</p>
+      <p class="text-gray-400 text-xs pt-2">Multipliers: Neutered 1.6 · Intact 1.8 · Weight Loss 1.0 · Puppy/Kitten &lt;4mo 3.0</p>
+    </div>
+  </section>
+</div>
+
+</main>
+
+<!-- Footer -->
+<footer class="border-t border-cream-200 bg-white/60 py-6">
+  <div class="max-w-5xl mx-auto px-4 text-center text-xs text-gray-400 space-y-1">
+    <p>© 2026 PawNutrition · Built with veterinary nutrition science</p>
+    <p>Not a substitute for professional veterinary advice. Always consult your vet before dietary changes.</p>
+  </div>
+</footer>
+
+<script>
+(function () {
+  'use strict';
+
+  /* ══════════════════════════════════════
+     DATA
+  ══════════════════════════════════════ */
+
+  const FOODS = [
+    { name:"Hill's Science Diet Adult Dog", species:'dog', plan:'maintenance', kcal:363, tag:'Vet #1', desc:'Balanced daily nutrition for adult dogs', amazon:'Hills+Science+Diet+Adult+Dog+Food' },
+    { name:"Purina Pro Plan Adult Dog", species:'dog', plan:'maintenance', kcal:387, tag:'Best Seller', desc:'Real chicken, high protein', amazon:'Purina+Pro+Plan+Adult+Dog+Food' },
+    { name:"Royal Canin Medium Adult", species:'dog', plan:'maintenance', kcal:375, tag:'Breed Specific', desc:'Tailored for medium breeds', amazon:'Royal+Canin+Medium+Adult+Dog' },
+    { name:"Hill's Prescription Diet r/d", species:'dog', plan:'weightloss', kcal:268, tag:'Low Cal', desc:'Clinically proven weight loss', amazon:'Hills+Prescription+Diet+rd+Dog' },
+    { name:"Purina Pro Plan Weight Mgmt", species:'dog', plan:'weightloss', kcal:298, tag:'High Fiber', desc:'Reduced calorie, high fiber', amazon:'Purina+Pro+Plan+Weight+Management+Dog' },
+    { name:"Blue Buffalo Healthy Weight", species:'dog', plan:'weightloss', kcal:310, tag:'Natural', desc:'L-Carnitine for metabolism', amazon:'Blue+Buffalo+Healthy+Weight+Dog' },
+    { name:"Purina Pro Plan Sport", species:'dog', plan:'active', kcal:475, tag:'30% Protein', desc:'For working & sport dogs', amazon:'Purina+Pro+Plan+Sport+Dog+Food' },
+    { name:"Royal Canin Sporting Life", species:'dog', plan:'active', kcal:442, tag:'Performance', desc:'Endurance & recovery support', amazon:'Royal+Canin+Sporting+Life+Dog' },
+    { name:"Hill's Science Diet Senior 7+", species:'dog', plan:'senior', kcal:353, tag:'Joint Support', desc:'Glucosamine & chondroitin', amazon:'Hills+Science+Diet+Senior+Dog+Food' },
+    { name:"Purina ONE Senior Dog", species:'dog', plan:'senior', kcal:340, tag:'7+ Years', desc:'Antioxidants for immune health', amazon:'Purina+ONE+Senior+Dog+Food' },
+    { name:"Hill's Science Diet Puppy", species:'dog', plan:'growth', kcal:397, tag:'DHA', desc:'Brain & eye development', amazon:'Hills+Science+Diet+Puppy+Food' },
+    { name:"Royal Canin Puppy", species:'dog', plan:'growth', kcal:389, tag:'Growth', desc:'Immune & digestive support', amazon:'Royal+Canin+Puppy+Food' },
+    { name:"Hill's Science Diet Adult Cat", species:'cat', plan:'maintenance', kcal:392, tag:'Vet #1', desc:'Complete adult cat nutrition', amazon:'Hills+Science+Diet+Adult+Cat+Food' },
+    { name:"Purina ONE Adult Cat", species:'cat', plan:'maintenance', kcal:405, tag:'Best Seller', desc:'Real chicken, high protein', amazon:'Purina+ONE+Adult+Cat+Food' },
+    { name:"Royal Canin Indoor Cat", species:'cat', plan:'maintenance', kcal:380, tag:'Indoor', desc:'Hairball & weight control', amazon:'Royal+Canin+Indoor+Cat+Food' },
+    { name:"Hill's Prescription Diet m/d", species:'cat', plan:'weightloss', kcal:312, tag:'Low Cal', desc:'Glucose & weight management', amazon:'Hills+Prescription+Diet+md+Cat' },
+    { name:"Purina Pro Plan Weight Mgmt Cat", species:'cat', plan:'weightloss', kcal:325, tag:'High Protein', desc:'Reduced fat formula', amazon:'Purina+Pro+Plan+Weight+Management+Cat' },
+    { name:"Hill's Science Diet Kitten", species:'cat', plan:'growth', kcal:415, tag:'DHA', desc:'Taurine & DHA for kittens', amazon:'Hills+Science+Diet+Kitten+Food' },
+    { name:"Royal Canin Kitten", species:'cat', plan:'growth', kcal:408, tag:'Growth', desc:'Immune system support', amazon:'Royal+Canin+Kitten+Food' },
+    { name:"Hill's Science Diet Senior 11+ Cat", species:'cat', plan:'senior', kcal:365, tag:'Kidney Support', desc:'For aging cats 11+', amazon:'Hills+Science+Diet+Senior+Cat+Food' },
+  ];
+
+  const GROWTH_MILESTONES = {
+    dog: [
+      { ageMin:0, ageMax:2,  title:'Neonatal (0–2 months)', calMult:3.0, tasks:['Nursing or puppy formula every 2–3 hrs','Begin deworming at 2 weeks','First vet visit at 6–8 weeks','Start core vaccinations (DHPP)'], weightNote:'Birth weight doubles by 10 days; triples by 3 weeks' },
+      { ageMin:2, ageMax:4,  title:'Early Puppy (2–4 months)', calMult:3.0, tasks:['Transition to puppy kibble (moisten initially)','3–4 meals per day','Complete DHPP series','Begin socialization window (3–14 weeks)','Flea/tick prevention starts'], weightNote:'Rapid growth — monitor weekly weight gain' },
+      { ageMin:4, ageMax:6,  title:'Mid Puppy (4–6 months)', calMult:2.0, tasks:['Reduce to 3 meals/day','Rabies vaccination','Begin basic obedience training','Teething — provide safe chew toys','Spay/neuter discussion with vet'], weightNote:'Growth rate begins to slow' },
+      { ageMin:6, ageMax:12, title:'Late Puppy (6–12 months)', calMult:1.8, tasks:['Transition to 2 meals/day','Switch to adult food (small breeds) or continue puppy food (large breeds)','Leash training & recall','Annual wellness exam'], weightNote:'Small breeds near adult size; large breeds still growing' },
+      { ageMin:12,ageMax:84, title:'Adult (1–7 years)', calMult:1.6, tasks:['2 meals/day at calculated DER','Annual vet checkup & dental cleaning','Maintain ideal BCS (4–5/9)','Regular exercise 30–60 min/day','Heartworm prevention year-round'], weightNote:'Weight should be stable; adjust calories if BCS changes' },
+      { ageMin:84,ageMax:999,title:'Senior (7+ years)', calMult:1.4, tasks:['Senior formula food with joint support','Bi-annual vet visits (bloodwork)','Monitor for arthritis, kidney, cognitive changes','Adjust calories for reduced activity','Consider omega-3 supplements'], weightNote:'May lose muscle mass — ensure adequate protein (≥25%)' },
+    ],
+    cat: [
+      { ageMin:0, ageMax:2,  title:'Neonatal (0–2 months)', calMult:3.0, tasks:['Nursing or kitten formula every 2–3 hrs','Begin deworming at 2 weeks','First vet visit at 8 weeks','FVRCP vaccination series starts'], weightNote:'Kittens gain ~10g/day in first weeks' },
+      { ageMin:2, ageMax:4,  title:'Early Kitten (2–4 months)', calMult:3.0, tasks:['Free-feed kitten kibble + wet food','3–4 meals/day if structured feeding','Complete FVRCP series','Socialization & litter training','Spay/neuter at 4–6 months recommended'], weightNote:'Most rapid growth phase' },
+      { ageMin:4, ageMax:6,  title:'Mid Kitten (4–6 months)', calMult:2.0, tasks:['Rabies vaccination','Spay/neuter procedure','Introduce scratching post','Play-based exercise 2× daily'], weightNote:'Approaching 80% of adult weight' },
+      { ageMin:6, ageMax:12, title:'Late Kitten (6–12 months)', calMult:1.6, tasks:['Transition to adult cat food','2 meals/day','Annual wellness exam','Indoor enrichment & vertical space'], weightNote:'Near adult size by 12 months' },
+      { ageMin:12,ageMax:132,title:'Adult (1–11 years)', calMult:1.4, tasks:['2 meals/day at calculated DER','Annual vet checkup','Maintain ideal BCS (5/9)','Interactive play 15 min/day','Fresh water always available'], weightNote:'Indoor cats prone to obesity — monitor closely' },
+      { ageMin:132,ageMax:999,title:'Senior (11+ years)', calMult:1.2, tasks:['Senior formula with kidney support','Bi-annual vet visits','Monitor hydration & litter habits','Warm, accessible resting areas','Joint supplements if needed'], weightNote:'May need softer food; watch for weight loss' },
+    ],
+  };
+
+  const WEIGHT_RANGES = {
+    dog: { small:[3,10], medium:[10,25], large:[25,45], giant:[45,80] },
+    cat: { small:[2,4],  medium:[4,6],   large:[6,10],  giant:[10,12] },
+  };
+
+  const BCS_DATA = [
+    { score:1, label:'Emaciated', desc:'Ribs, spine, hip bones visible from distance. No body fat.', color:'bg-red-100 border-red-300' },
+    { score:3, label:'Thin', desc:'Ribs easily felt with minimal fat. Visible waist.', color:'bg-orange-100 border-orange-300' },
+    { score:5, label:'Ideal ✓', desc:'Ribs felt without excess fat. Visible waist, abdominal tuck.', color:'bg-sage-400/20 border-sage-500' },
+    { score:7, label:'Overweight', desc:'Ribs difficult to feel. Waist barely visible. Fat deposits.', color:'bg-orange-100 border-orange-300' },
+    { score:9, label:'Obese', desc:'Massive fat deposits. No waist. Abdomen distended.', color:'bg-red-100 border-red-300' },
+  ];
+
+  const TOXIC_FOODS = [
+    { name:'Chocolate', icon:'🍫', danger:'Theobromine — seizures, heart failure' },
+    { name:'Grapes & Raisins', icon:'🍇', danger:'Kidney failure (even small amounts)' },
+    { name:'Onions & Garlic', icon:'🧅', danger:'Destroys red blood cells (anemia)' },
+    { name:'Xylitol (Sugar-Free)', icon:'🍬', danger:'Rapid insulin release — hypoglycemia, liver failure' },
+    { name:'Macadamia Nuts', icon:'🥜', danger:'Weakness, vomiting, hyperthermia (dogs)' },
+    { name:'Alcohol', icon:'🍺', danger:'Depression, coma, death (small amounts toxic)' },
+    { name:'Avocado', icon:'🥑', danger:'Persin — vomiting, diarrhea (birds most sensitive)' },
+    { name:'Raw Dough', icon:'🍞', danger:'Expands in stomach; ethanol production' },
+  ];
+
+  const FEEDING_TIPS = [
+    { title:'Measure Every Meal', body:'Use a measuring cup, not "eyeballing." Even 10% overfeeding leads to obesity within months.' },
+    { title:'Treats = 10% Max', body:'Treats should never exceed 10% of daily calories. One medium milk-bone ≈ 40 kcal.' },
+    { title:'Transition Food Slowly', body:'Mix new food over 7–10 days: 25% → 50% → 75% → 100% to avoid GI upset.' },
+    { title:'Weigh Monthly', body:'Weigh your pet monthly and re-calculate calories. A 2 lb change matters.' },
+    { title:'Wet vs. Dry', body:'Wet food has ~75% moisture and fewer calories per cup. Great for weight management and hydration.' },
+    { title:'Avoid Table Scraps', body:'Human food is calorie-dense and often contains toxic ingredients. Stick to pet-specific food.' },
+  ];
+
+  const STAGE_LABELS = { '1.6':'Neutered Adult', '1.8':'Intact Adult', '1.0':'Weight Loss', '3.0':'Puppy/Kitten <4mo', '2.0':'Young Puppy/Kitten', '1.4':'Senior', '1.2':'Geriatric Cat' };
+
+  /* ══════════════════════════════════════
+     STATE
+  ══════════════════════════════════════ */
+  let unit = 'lbs';
+  let petType = 'dog';
+  let currentPage = 'home';
+  let lastCalcResult = null;
+
+  /* ══════════════════════════════════════
+     NAVIGATION
+  ══════════════════════════════════════ */
+  window.navigate = function (page) {
+    currentPage = page;
+    document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+    document.getElementById('page-' + page).classList.add('active');
+    document.querySelectorAll('.nav-link').forEach(l => l.classList.toggle('active', l.dataset.page === page));
+    closeMobileMenu();
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+    if (page === 'foods') renderFoodDirectory('all');
+    if (page === 'learn') renderLearn();
+    if (page === 'growth') renderGrowthPlan();
+  };
+
+  document.querySelectorAll('.nav-link, .mobile-nav').forEach(btn => {
+    btn.addEventListener('click', () => navigate(btn.dataset.page));
+  });
+
+  /* Mobile menu */
+  const menuBtn = document.getElementById('menuBtn');
+  const mobileMenu = document.getElementById('mobileMenu');
+  const menuOverlay = document.getElementById('menuOverlay');
+  menuBtn.addEventListener('click', () => { mobileMenu.classList.add('open'); menuOverlay.classList.remove('hidden'); });
+  document.getElementById('menuClose').addEventListener('click', closeMobileMenu);
+  menuOverlay.addEventListener('click', closeMobileMenu);
+  function closeMobileMenu() { mobileMenu.classList.remove('open'); menuOverlay.classList.add('hidden'); }
+
+  /* ══════════════════════════════════════
+     CALCULATOR
+  ══════════════════════════════════════ */
+  document.querySelectorAll('.pet-type-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      document.querySelectorAll('.pet-type-btn').forEach(b => b.classList.remove('selected'));
+      btn.classList.add('selected');
+      petType = btn.dataset.pet;
+      const ls = document.getElementById('lifeStage');
+      const hp = document.getElementById('healthPlan');
+      if (petType === 'puppy' || petType === 'kitten') { ls.value = '3.0'; hp.value = 'growth'; }
+      else { ls.value = '1.6'; hp.value = 'maintenance'; }
+    });
+  });
+
+  document.getElementById('btnLbs').addEventListener('click', () => setUnit('lbs'));
+  document.getElementById('btnKg').addEventListener('click',  () => setUnit('kg'));
+  function setUnit(u) {
+    unit = u;
+    document.getElementById('btnLbs').classList.toggle('active', u === 'lbs');
+    document.getElementById('btnKg').classList.toggle('active', u === 'kg');
+    document.getElementById('unitLabel').textContent = u;
+  }
+
+  document.getElementById('healthPlan').addEventListener('change', function () {
+    const map = { weightloss:'1.0', growth:'3.0', maintenance:'1.6', active:'1.8', senior:'1.6' };
+    if (map[this.value]) document.getElementById('lifeStage').value = map[this.value];
+  });
+  document.getElementById('lifeStage').addEventListener('change', function () {
+    if (this.value === '1.0') document.getElementById('healthPlan').value = 'weightloss';
+    else if (this.value === '3.0') document.getElementById('healthPlan').value = 'growth';
+  });
+
+  function getSpecies(type) { return (type === 'puppy' || type === 'dog') ? 'dog' : 'cat'; }
+
+  function calculate() {
+    const rawWeight = parseFloat(document.getElementById('weight').value);
+    const weightError = document.getElementById('weightError');
+    if (!rawWeight || rawWeight <= 0) { weightError.classList.remove('hidden'); return null; }
+    weightError.classList.add('hidden');
+    const weightKg = unit === 'lbs' ? rawWeight / 2.204 : rawWeight;
+    const rer = 70 * Math.pow(weightKg, 0.75);
+    const multiplier = parseFloat(document.getElementById('lifeStage').value);
+    const der = rer * multiplier;
+    return { weightKg, rer, multiplier, der };
+  }
+
+  document.getElementById('calcForm').addEventListener('submit', e => {
+    e.preventDefault();
+    const data = calculate();
+    if (!data) return;
+    lastCalcResult = data;
+    renderCalcResults(data);
+  });
+
+  function renderCalcResults(data) {
+    const name = document.getElementById('petName').value.trim();
+    const plan = document.getElementById('healthPlan').value;
+    const species = getSpecies(petType);
+    const petLabel = { dog:'Dog', cat:'Cat', puppy:'Puppy', kitten:'Kitten' }[petType];
+
+    document.getElementById('resultGreeting').textContent = name ? `Daily calories for ${name} (${petLabel})` : `Daily calories for your ${petLabel.toLowerCase()}`;
+    document.getElementById('derResult').textContent = Math.round(data.der).toLocaleString() + ' kcal/day';
+    document.getElementById('rerResult').textContent = Math.round(data.rer).toLocaleString() + ' kcal';
+    document.getElementById('multiplierResult').textContent = '×' + data.multiplier;
+    document.getElementById('stageLabel').textContent = STAGE_LABELS[String(data.multiplier)] || 'Custom';
+    document.getElementById('weightUsed').textContent = data.weightKg.toFixed(2) + ' kg';
+
+    const foods = FOODS.filter(f => f.species === species && f.plan === plan).slice(0, 4);
+    const fallback = FOODS.filter(f => f.species === species && f.plan === 'maintenance').slice(0, 2);
+    const recFoods = foods.length ? foods : fallback;
+    const avgKcal = recFoods.reduce((s, f) => s + f.kcal, 0) / recFoods.length;
+    const cupsPerDay = (data.der / avgKcal).toFixed(1);
+    const mealKcal = Math.round(data.der / 2);
+    const treatKcal = Math.round(data.der * 0.1);
+
+    /* Health Plan */
+    const planDetails = {
+      maintenance: { goal:'Maintain current healthy weight', protein:'22–26%', fat:'12–16%', fiber:'3–5%', note:'Steady calorie intake with regular exercise.' },
+      weightloss:  { goal:'Lose 1–2% body weight per week', protein:'≥30%', fat:'≤10%', fiber:'≥8%', note:'Never drop below RER. Increase activity gradually.' },
+      active:      { goal:'Support high energy expenditure', protein:'≥28%', fat:'≥16%', fiber:'3–4%', note:'Feed within 30 min post-exercise. Extra hydration.' },
+      senior:      { goal:'Support aging metabolism & joints', protein:'≥25%', fat:'10–14%', fiber:'4–6%', note:'Easily digestible protein. Glucosamine & omega-3s.' },
+      growth:      { goal:'Support healthy development', protein:'≥28%', fat:'≥15%', fiber:'3–4%', note:'Calcium:Phosphorus ratio 1.2:1. DHA for brain development.' },
+    };
+    const pd = planDetails[plan];
+    document.getElementById('planContent').innerHTML = `
+      <div class="grid sm:grid-cols-2 gap-4">
+        <div class="bg-cream-50 rounded-2xl p-4"><p class="text-xs text-gray-400 uppercase font-semibold">Goal</p><p class="font-semibold mt-1">${pd.goal}</p></div>
+        <div class="bg-cream-50 rounded-2xl p-4"><p class="text-xs text-gray-400 uppercase font-semibold">Daily Intake</p><p class="font-semibold mt-1">${Math.round(data.der)} kcal · ~${cupsPerDay} cups/day</p></div>
+        <div class="bg-cream-50 rounded-2xl p-4"><p class="text-xs text-gray-400 uppercase font-semibold">Protein Target</p><p class="font-semibold mt-1">${pd.protein}</p></div>
+        <div class="bg-cream-50 rounded-2xl p-4"><p class="text-xs text-gray-400 uppercase font-semibold">Fat Target</p><p class="font-semibold mt-1">${pd.fat}</p></div>
+      </div>
+      <div class="bg-apricot-400/8 border border-apricot-400/20 rounded-2xl p-4 text-sm text-gray-700">
+        <strong>Meal Plan:</strong> 2 meals/day · ${mealKcal} kcal each · Treat budget: ${treatKcal} kcal (10% max)<br/>
+        <strong>Note:</strong> ${pd.note}
+      </div>`;
+
+    /* Weekly Schedule */
+    const days = ['Mon','Tue','Wed','Thu','Fri','Sat','Sun'];
+    document.getElementById('weeklySchedule').innerHTML = days.map(d => `
+      <div class="bg-cream-50 rounded-xl p-3 space-y-1">
+        <p class="font-bold text-apricot-600">${d}</p>
+        <p class="text-gray-600">AM ${mealKcal} kcal</p>
+        <p class="text-gray-600">PM ${mealKcal} kcal</p>
+        <p class="text-gray-400">${Math.round(treatKcal/7)} kcal treats</p>
+      </div>`).join('');
+
+    /* Food cards */
+    document.getElementById('resultFoodGrid').innerHTML = recFoods.map(f => foodCardHTML(f)).join('');
+
+    /* Amazon */
+    const q = plan === 'weightloss' ? 'low calorie pet food weight management' : `${petLabel} ${plan} pet food`;
+    document.getElementById('amazonBtn').href = 'https://www.amazon.com/s?k=' + encodeURIComponent(q);
+
+    document.getElementById('resultsSection').classList.remove('hidden');
+    document.getElementById('resultsSection').scrollIntoView({ behavior:'smooth', block:'start' });
+  }
+
+  /* ══════════════════════════════════════
+     FOOD GUIDE
+  ══════════════════════════════════════ */
+  function foodCardHTML(f) {
+    return `<div class="food-card bg-white rounded-2xl border border-cream-200 p-5 flex flex-col gap-3">
+      <div class="flex items-start justify-between gap-2">
+        <h4 class="font-bold text-gray-900 leading-snug">${f.name}</h4>
+        <span class="shrink-0 text-xs font-semibold text-apricot-600 bg-apricot-400/10 px-2 py-0.5 rounded-full">${f.tag}</span>
+      </div>
+      <p class="text-sm text-gray-500">${f.desc}</p>
+      <div class="flex items-center justify-between mt-auto pt-2 border-t border-cream-100">
+        <span class="text-sm font-semibold text-gray-700">~${f.kcal} kcal/cup</span>
+        <a href="https://www.amazon.com/s?k=${f.amazon}" target="_blank" rel="noopener noreferrer" class="text-sm font-bold text-apricot-600 hover:text-apricot-500 transition">Buy on Amazon →</a>
+      </div>
+    </div>`;
+  }
+
+  function renderFoodDirectory(filter) {
+    document.querySelectorAll('.filter-chip').forEach(c => c.classList.toggle('active', c.dataset.filter === filter));
+    let list = FOODS;
+    if (filter === 'dog') list = FOODS.filter(f => f.species === 'dog');
+    else if (filter === 'cat') list = FOODS.filter(f => f.species === 'cat');
+    else if (filter !== 'all') list = FOODS.filter(f => f.plan === filter);
+    document.getElementById('foodDirectory').innerHTML = list.map(f => foodCardHTML(f)).join('');
+  }
+
+  document.querySelectorAll('.filter-chip').forEach(chip => {
+    chip.addEventListener('click', () => renderFoodDirectory(chip.dataset.filter));
+  });
+
+  /* ══════════════════════════════════════
+     GROWTH PLANNER
+  ══════════════════════════════════════ */
+  document.getElementById('growthUpdateBtn').addEventListener('click', renderGrowthPlan);
+
+  function renderGrowthPlan() {
+    const type = document.getElementById('growthPetType').value;
+    const ageMonths = parseInt(document.getElementById('growthAge').value) || 0;
+    const breedSize = document.getElementById('growthBreedSize').value;
+    const speciesKey = (type === 'kitten' || type === 'cat') ? 'cat' : 'dog';
+    const milestones = GROWTH_MILESTONES[speciesKey];
+
+    const current = milestones.find(m => ageMonths >= m.ageMin && ageMonths < m.ageMax) || milestones[milestones.length - 1];
+
+    document.getElementById('growthStageBanner').innerHTML = `
+      <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+        <div>
+          <p class="text-sm text-apricot-600 font-semibold">Current Stage · ${ageMonths} months old</p>
+          <h3 class="text-xl font-bold text-gray-900 mt-1">${current.title}</h3>
+          <p class="text-sm text-gray-500 mt-1">${current.weightNote}</p>
+        </div>
+        <div class="text-center bg-white rounded-xl px-5 py-3 border border-cream-200 shrink-0">
+          <p class="text-xs text-gray-400 uppercase font-semibold">Calorie Multiplier</p>
+          <p class="text-2xl font-bold text-apricot-600">×${current.calMult}</p>
+        </div>
+      </div>`;
+
+    document.getElementById('growthTimeline').innerHTML = milestones.map((m, i) => {
+      const isCurrent = m === current;
+      const isPast = ageMonths >= m.ageMax;
+      return `<div class="flex gap-4 ${i < milestones.length - 1 ? '' : ''}">
+        <div class="flex flex-col items-center pt-1">
+          <div class="timeline-dot ${isCurrent ? 'ring-4 ring-apricot-400/30' : ''} ${isPast ? 'bg-sage-500' : ''}"></div>
+          ${i < milestones.length - 1 ? '<div class="timeline-line flex-1 my-1"></div>' : ''}
+        </div>
+        <div class="milestone-card pb-6 flex-1 ${isCurrent ? 'bg-apricot-400/8 border-apricot-400/30' : 'bg-white border-cream-200'} border rounded-2xl p-4 ${isPast ? 'opacity-60' : ''}">
+          <div class="flex items-center justify-between gap-2">
+            <h4 class="font-bold text-gray-900">${m.title}</h4>
+            ${isCurrent ? '<span class="text-xs font-bold text-apricot-600 bg-apricot-400/15 px-2 py-0.5 rounded-full">YOU ARE HERE</span>' : ''}
+            ${isPast ? '<span class="text-xs text-sage-600">✓ Complete</span>' : ''}
+          </div>
+          <p class="text-xs text-gray-400 mt-1">${m.ageMin}–${m.ageMax === 999 ? '∞' : m.ageMax} months · Calorie ×${m.calMult}</p>
+          <ul class="mt-3 space-y-1.5">${m.tasks.map(t => `<li class="text-sm text-gray-600 flex gap-2"><span class="text-apricot-500 shrink-0">•</span>${t}</li>`).join('')}</ul>
+        </div>
+      </div>`;
+    }).join('');
+
+    const range = WEIGHT_RANGES[speciesKey][breedSize];
+    const pct = Math.min(ageMonths / (speciesKey === 'cat' ? 12 : 18), 1);
+    const expectedWt = range[0] + (range[1] - range[0]) * pct;
+    document.getElementById('weightChart').innerHTML = `
+      <div class="flex items-end gap-2 h-32">
+        ${[0.25,0.5,0.75,1.0].map(p => {
+          const wt = (range[0] + (range[1] - range[0]) * p).toFixed(1);
+          const h = 20 + p * 80;
+          const isCurrent = Math.abs(p - pct) < 0.15;
+          return `<div class="flex-1 flex flex-col items-center gap-1">
+            <div class="w-full rounded-t-lg ${isCurrent ? 'bg-apricot-500' : 'bg-apricot-400/30'}" style="height:${h}px"></div>
+            <span class="text-xs text-gray-500">${wt} kg</span>
+          </div>`;
+        }).join('')}
+      </div>
+      <p class="text-sm text-center text-gray-600">Estimated current target: <strong>${expectedWt.toFixed(1)} kg</strong> (${(expectedWt * 2.204).toFixed(1)} lbs) for ${breedSize} ${speciesKey}</p>`;
+  }
+
+  /* ══════════════════════════════════════
+     LEARN
+  ══════════════════════════════════════ */
+  function renderLearn() {
+    document.getElementById('bcsGuide').innerHTML = BCS_DATA.map(b => `
+      <div class="rounded-2xl border p-4 ${b.color} ${b.score === 5 ? 'ring-2 ring-sage-500' : ''}">
+        <p class="font-bold text-lg">${b.score}/9</p>
+        <p class="font-semibold text-sm mt-1">${b.label}</p>
+        <p class="text-xs text-gray-600 mt-1">${b.desc}</p>
+      </div>`).join('');
+
+    document.getElementById('toxicFoods').innerHTML = TOXIC_FOODS.map(t => `
+      <div class="flex gap-3 bg-red-50 border border-red-100 rounded-xl p-3">
+        <span class="text-2xl">${t.icon}</span>
+        <div><p class="font-semibold text-sm">${t.name}</p><p class="text-xs text-red-700/70">${t.danger}</p></div>
+      </div>`).join('');
+
+    document.getElementById('feedingTips').innerHTML = FEEDING_TIPS.map(t => `
+      <div class="flex gap-3"><span class="text-apricot-500 text-lg">✦</span><div><p class="font-semibold">${t.title}</p><p class="text-sm text-gray-600">${t.body}</p></div></div>`).join('');
+  }
+
+  /* ══════════════════════════════════════
+     INIT
+  ══════════════════════════════════════ */
+  renderFoodDirectory('all');
+  renderLearn();
+  renderGrowthPlan();
+  navigate('home');
+
+})();
+</script>
+</body>
+</html>
