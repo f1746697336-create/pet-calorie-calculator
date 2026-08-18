@@ -738,8 +738,7 @@
 
     /* Amazon */
     const q = plan === 'weightloss' ? 'low calorie pet food weight management' : `${petLabel} ${plan} pet food`;
-    document.getElementById('amazonBtn').href = 'https://www.amazon.com/s?k=' + encodeURIComponent(q);
-
+document.getElementById('amazonBtn').href = 'https://www.amazon.com/s?k=' + encodeURIComponent(q) + '&tag=petcalc2026-20';
     document.getElementById('resultsSection').classList.remove('hidden');
     document.getElementById('resultsSection').scrollIntoView({ behavior:'smooth', block:'start' });
   }
@@ -756,7 +755,7 @@
       <p class="text-sm text-gray-500">${f.desc}</p>
       <div class="flex items-center justify-between mt-auto pt-2 border-t border-cream-100">
         <span class="text-sm font-semibold text-gray-700">~${f.kcal} kcal/cup</span>
-        <a href="https://www.amazon.com/s?k=${f.amazon}" target="_blank" rel="noopener noreferrer" class="text-sm font-bold text-apricot-600 hover:text-apricot-500 transition">Buy on Amazon →</a>
+        <a href="https://www.amazon.com/s?k=${f.amazon}&tag=petcalc2026-20" target="_blank" rel="noopener noreferrer" class="text-sm font-bold text-apricot-600 hover:text-apricot-500 transition">Buy on Amazon →</a>
       </div>
     </div>`;
   }
